@@ -1,25 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 :root{
-  --bg:#fff0f6;
-  --card:#ffd6e7;
-  --accent:#ff66b3;
-  --text:#3a163a;
-  --muted:#6b465e;
+  --bg: #fffafc;
+  --surface: #ffffff;
+  --muted: #7a5a6a;
+  --accent: #ff6aa3;
+  --accent-600: #ff4f8f;
+  --glass: rgba(255,255,255,0.6);
+  --radius: 14px;
+  --card-shadow: 0 6px 20px rgba(25,10,25,0.06);
 }
+
 *{box-sizing:border-box}
-body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);margin:0;}
-.hero{background:linear-gradient(90deg,var(--accent),#ff9ccf);color:white;padding:20px 16px;display:flex;align-items:center;justify-content:space-between}
-.hero h1{margin:0}
-.container{max-width:900px;margin:24px auto;padding:16px}
-.card{background:var(--card);padding:12px;border-radius:10px;margin-bottom:12px}
-label{display:block;margin-bottom:8px}
-input,textarea,button{font:inherit}
-input,textarea{width:100%;padding:8px;border-radius:6px;border:1px solid rgba(0,0,0,0.08)}
-button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
-#products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.product{background:white;padding:8px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
-.product img{width:100%;height:140px;object-fit:cover;border-radius:8px}
-.footer{padding:12px;text-align:center;color:var(--muted)}
-.top-right{position:fixed;right:16px;top:16px}
-.card{background:var(--card);padding:12px;border-radius:10px;margin-bottom:12px}
-.product button{margin-top:8px}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, var(--bg), #fff6f9 120px);
+  color: #2b1b2b;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Header */
+.hero{
+  display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:transparent;
+}
+.hero h1{margin:0;font-weight:700;letter-spacing:0.2px;color:var(--accent-600)}
+.hero nav{display:flex;gap:12px;align-items:center}
+.hero a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+.hero a:hover{background:rgba(255,106,163,0.08);color:var(--accent-600)}
+
+.container{max-width:1100px;margin:18px auto;padding:8px}
+
+/* Cards and layout */
+.card{background:var(--surface);border-radius:var(--radius);padding:14px;box-shadow:var(--card-shadow);margin-bottom:16px}
+
+#products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.product{display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,#fff,#fffafc);border-radius:12px;padding:12px;box-shadow:0 4px 18px rgba(34,15,34,0.04);}
+.product img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+.product h3{margin:0;font-size:1.05rem;color:#2b1b2b}
+.product p{margin:0;color:var(--muted);font-size:0.95rem}
+.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.price{font-weight:700;color:var(--accent-600)}
+.btn{background:var(--accent);color:white;border:none;padding:9px 12px;border-radius:10px;cursor:pointer;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid rgba(43,27,43,0.06);color:var(--muted)}
+
+/* Forms */
+label{display:block;font-size:0.95rem;color:var(--muted);margin-bottom:6px}
+input,textarea,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(34,15,34,0.06);background:linear-gradient(180deg,#fff,#fff);}
+button{font-family:inherit}
+
+/* Admin */
+#productList .card{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#productList img{border-radius:8px}
+
+/* Checkout/Cart */
+#cartItems .card{display:flex;justify-content:space-between;align-items:center;gap:12px}
+#cartItems .card button{width:36px;height:36px;border-radius:8px}
+#cartTotal{font-weight:800;color:var(--accent-600)}
+
+/* Receipt */
+#receipt .card{padding:12px;background:linear-gradient(180deg,#fff,#fffafc);}
+
+/* Footer */
+.footer{padding:16px;text-align:center;color:var(--muted);font-size:0.95rem}
+
+/* Responsive tweaks */
+@media (max-width:600px){
+  .hero{padding:12px}
+  .product img{height:140px}
+  .container{padding:12px}
+}
 
