@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout - Pink Cafe</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h2>ตะกร้าสินค้า</h2>
+    <div id="cartItems"></div>
+    <div class="card">
+      <h3>สรุป</h3>
+      <div>รวม: ฿<span id="cartTotal">0.00</span></div>
+      <label>วิธีชำระเงิน
+        <select id="paymentMethod"><option value="cash">เงินสด</option><option value="card">บัตร</option></select>
+      </label>
+      <button id="checkoutBtn">ชำระเงิน</button>
+    </div>
+  </main>
+</body>
+</html>

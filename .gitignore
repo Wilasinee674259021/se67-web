@@ -1,0 +1,10 @@
+node_modules/
+*.sqlite
+data.sqlite
+cafe/data.sqlite
+cafe/node_modules/
+cafe/public/uploads/
+/.vscode/
+.DS_Store
+npm-debug.log
+dist/
